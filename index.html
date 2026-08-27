@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Suivi Entretien Véhicule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Bouton Info (i) -->
+        <button id="btn-info" class="btn-info-car">i</button>
+
+        <!-- Bouton Ajouter (+) -->
+        <button id="btn-open-form" class="btn-ajouter">
+            <svg class="icon-ajouter" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" fill="rgba(30, 53, 69, 0.85)"/>
+                <line x1="12" y1="8" x2="12" y2="16"/>
+                <line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+        </button>
+
+        <!-- Espaceur supérieur pour caler le début de la liste sur le fond -->
+        <div class="top-spacer"></div>
+
+        <!-- Liste des entretiens avec scroll -->
+        <div id="liste-entretiens" class="list-container">
+            <!-- Les éléments et séparateurs d'années seront générés dynamiquement via JS -->
+        </div>
+
+        <!-- Pop-up Fiche Technique (Déclenché par le bouton 'i') -->
+        <div id="modal-info" class="modal-overlay hidden">
+            <div class="info-popup">
+                <div class="info-popup-header">
+                    <h3>Fiche Technique</h3>
+                    <button id="btn-close-info" class="btn-close-popup">&times;</button>
+                </div>
+                <div class="info-popup-body">
+                    <div class="info-group">
+                        <span class="info-label">Véhicule</span>
+                        <span class="info-val">Peugeot 208 II</span>
+                        <span class="info-sub">1.2 PureTech 100 ch</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Motorisation & Énergie</span>
+                        <span class="info-val">Essence / Micro-hybride</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Huile Moteur Préconisée</span>
+                        <span class="info-val">0W20 (Norme PSA B71 2010)</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Pression des Pneus</span>
+                        <span class="info-val">Avant : 2.4 bar | Arrière : 2.2 bar</span>
+                    </div>
+
+                    <!-- Cadre Importer / Exporter -->
+                    <div class="io-container">
+                        <button id="btn-export" class="btn-io">Exporter les données</button>
+                        <button id="btn-import" class="btn-io">Importer les données</button>
+                        <input type="file" id="file-input" accept=".json" class="hidden">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de Formulaire d'Ajout d'Entretien -->
+        <div id="screen-form" class="form-screen hidden">
+            <div class="form-header">
+                <button id="btn-close-form" class="btn-back">&#8592;</button>
+                <h2>Nouvel Entretien</h2>
+            </div>
+            <form id="form-entretien" class="form-body">
+                <div class="form-group">
+                    <label for="input-date">Date de l'intervention</label>
+                    <input type="date" id="input-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-titre">Type d'entretien / Pièce</label>
+                    <input type="text" id="input-titre" placeholder="Ex: Vidange + Filtre" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-km">Kilométrage (km)</label>
+                    <input type="number" id="input-km" placeholder="Ex: 45000" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-prix">Prix (€)</label>
+                    <input type="number" step="0.01" id="input-prix" placeholder="Ex: 120.00">
+                </div>
+                <button type="submit" class="btn-submit">Enregistrer</button>
+            </form>
+        </div>
+
+        <!-- Pop-up de confirmation de suppression -->
+        <div id="modal-confirm" class="modal-overlay hidden">
+            <div class="modal-box">
+                <p>Voulez-vous vraiment supprimer cet entretien ?</p>
+                <div class="modal-actions">
+                    <button id="btn-cancel-delete" class="btn-modal btn-cancel">Annuler</button>
+                    <button id="btn-confirm-delete" class="btn-modal btn-confirm">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
+                      
