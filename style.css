@@ -91,11 +91,15 @@ body {
     border: none;
     box-shadow: none;
     padding: 0px 20px 20px 20px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; /* Scroll fluide sur iPhone */
 }
 
+/* Supprime l'espace inutile au-dessus de la toute première année */
+.list-container .year-separator:first-child {
+    margin-top: 0;
+}
 
 .empty-msg {
     text-align: center;
