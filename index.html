@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entretien C4 Picasso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Bouton Ajouter -->
+        <button id="btn-open-form" class="btn-ajouter">
+            <img src="btn-ajouter.png" alt="Ajouter" class="icon-ajouter">
+        </button>
+
+        <!-- Espace voiture -->
+        <div class="top-spacer"></div>
+
+        <!-- Zone bleue scrollable des entretiens -->
+        <main class="list-container" id="list-container">
+            <!-- Cartes et séparateurs générés via JS -->
+        </main>
+
+        <!-- Page d'ajout d'intervention -->
+        <div id="form-screen" class="form-screen hidden">
+            <div class="form-header">
+                <button id="btn-close-form" class="btn-back">←</button>
+                <h2>Ajouter une intervention</h2>
+            </div>
+            
+            <form id="add-form" class="form-body">
+                <div class="form-group">
+                    <label for="intervention">Intervention</label>
+                    <input type="text" id="intervention" placeholder="ex: Vidange Moteur" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-entretien">Date</label>
+                    <input type="month" id="date-entretien" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="km-entretien">Kilométrage (optionnel)</label>
+                    <input type="number" id="km-entretien" placeholder="ex: 145000">
+                </div>
+
+                <button type="submit" class="btn-submit">Valider</button>
+            </form>
+
+            <div class="io-container">
+                <button id="btn-export" class="btn-io">Exporter</button>
+                <label for="file-import" class="btn-io label-import">Importer</label>
+                <input type="file" id="file-import" accept=".json" style="display: none;">
+            </div>
+        </div>
+
+        <!-- Pop-up Modal de confirmation de suppression -->
+        <div id="confirm-modal" class="modal-overlay hidden">
+            <div class="modal-box">
+                <p>Supprimer cet entretien ?</p>
+                <div class="modal-actions">
+                    <button id="btn-cancel-delete" class="btn-modal btn-cancel">Annuler</button>
+                    <button id="btn-confirm-delete" class="btn-modal btn-confirm">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
