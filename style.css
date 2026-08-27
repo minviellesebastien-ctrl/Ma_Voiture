@@ -264,8 +264,15 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 35px;
+    margin-bottom: 45px; /* Espace agrandi sous le titre */
 }
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Espace entre l'intervention et la date */
+}
+
 
 .btn-back {
     background: none;
@@ -275,13 +282,6 @@ body {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
-
-.form-body {
-    display: flex;
-    flex-direction: column;
-    gap: 32px; /* Augmenté pour aérer les éléments */
-}
-
 
 .form-group {
     display: flex;
