@@ -37,7 +37,7 @@ body {
 /* Petit bouton Info en bas à gauche de la zone voiture */
 .btn-info-car {
     position: absolute;
-    top: calc(47% - 36px);
+    top: calc(47% - 48px);
     left: 15px;
     width: 28px;
     height: 28px;
