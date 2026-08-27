@@ -11,13 +11,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh; /* Adapte la hauteur dynamique exacte sur mobile */
+    overflow: hidden; /* Empêche le scroll de la page entière */
 }
 
 .app-container {
     width: 100%;
     max-width: 430px;
     height: 100vh;
+    height: 100dvh;
     background-image: url('fond.png');
     background-size: cover;
     background-position: top center;
@@ -25,8 +28,9 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Bloque tout débordement de l'accueil */
 }
+
 
 /* Bouton Info (aligné à la hauteur du bouton ajouter) */
 .btn-info-car {
@@ -81,12 +85,15 @@ body {
 /* Zone transparente s'incrustant sur le fond PNG */
 .list-container {
     flex: 1;
+    min-height: 0; /* Important : permet au scroll interne de fonctionner sans étirer l'accueil */
     background: transparent;
     border: none;
     box-shadow: none;
     padding: 10px 20px 20px 20px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll fluide sur iPhone */
 }
+
 
 .empty-msg {
     text-align: center;
