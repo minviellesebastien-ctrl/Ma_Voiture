@@ -22,14 +22,15 @@ body {
     height: 100vh;
     height: 100dvh;
     background-image: url('fond.png');
-    background-size: cover;
-    background-position: top center;
+    background-size: 100% 100%; /* Force l'image à s'afficher entièrement sans être rognée */
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Bloque tout débordement de l'accueil */
+    overflow: hidden;
 }
+
 
 
 /* Bouton Info (aligné à la hauteur du bouton ajouter) */
