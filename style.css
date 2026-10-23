@@ -331,13 +331,11 @@ body {
 /* Bloc Importer / Exporter en bas de la page Ajouter */
 .io-container {
     margin-top: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
     background: #1e3545;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn-io, .label-import {
