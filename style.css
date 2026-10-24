@@ -321,6 +321,11 @@ body {
     border-radius: 8px;
     color: #fff;
     font-size: 15px;
+    color-scheme: dark;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 .btn-submit {
